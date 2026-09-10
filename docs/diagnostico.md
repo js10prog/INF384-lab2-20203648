@@ -1,3 +1,5 @@
+**Parte 1**
+
 Rpta 1.1:
 - Defecto 1: publicar no depende de validar
 - Archivo: pipeline.yml, lienas 42–65
@@ -52,3 +54,9 @@ Rpta 1.5:
 Como no se realizará un despliegue a producción durante la intervención, no es posible medir directamente el Lead Time. 
 Se utilizará como proxy la sgte métrica:
 - la duración total del pipeline, desde el inicio de la ejecución hasta su finalización.
+
+
+**Parte 2**
+
+Ahora la ejecucion sale 76 s, URL: https://github.com/js10prog/INF384-lab2-20203648/actions/runs/34540260624
+
