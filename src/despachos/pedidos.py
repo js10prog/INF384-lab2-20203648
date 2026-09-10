@@ -5,8 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
-#este es una linea ejemplo
-#segunda linea ejemplo
+
 
 class Estado(str, Enum):
     REGISTRADO = "registrado"
