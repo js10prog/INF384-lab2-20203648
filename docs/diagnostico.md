@@ -60,3 +60,18 @@ Se utilizará como proxy la sgte métrica:
 
 Ahora la ejecucion sale 76 s, URL: https://github.com/js10prog/INF384-lab2-20203648/actions/runs/34540260624
 
+
+**Justificación de versión 1.3.0**
+
+El repositorio es un fork donde la versión original (v1.2.0) corresponde al commit b7e44ce. Desde ese commit hasta HEAD, se los cambios fueron (esto se puede ver en el historial de commits):
+
+Cambios desde v1.2.0:
+- **feat(tarifas)**: agregar desglose de la tarifa calculada (commit 562e631) - NUEVA FUNCIÓN BACKWARDS-COMPATIBLE
+- **fix(validaciones)**: colapsar espacios repetidos en el nombre del cliente (commit 6ba3804) - CORRECCIÓN DE BUG
+- **fix(tarifas)**: redondear el costo por peso a dos decimales (commit b481aa6) - CORRECCIÓN DE BUG
+- Cambios de infraestructura: pipeline, pruebas, documentación (sin impacto en versión)
+
+Según el historial de commits, la función `desglose()` en `src/despachos/tarifas.py` es una nueva funcionalidad pública que no rompe compatibilidad, y según la semántica de versiones, esto justifica un incremento de versión MINOR.
+
+Por lo tanto, la versión correcta es **1.3.0** (antes 1.2.0).
+
