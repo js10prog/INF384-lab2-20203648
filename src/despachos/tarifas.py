@@ -81,3 +81,35 @@ def desglose(envio: Envio) -> dict[str, float]:
         "factor_zona": factor,
         "total": calcular(envio),
     }
+
+
+def calcular_descuento_volumen(envio: Envio, cantidad_pedidos: int) -> float:
+    """Calcula descuento por volumen de envios basado en multiples criterios."""
+    if cantidad_pedidos <= 0:
+        return 0.0
+    
+    descuento_base = 0.0
+    
+    if cantidad_pedidos >= 10:
+        descuento_base = 0.15
+    elif cantidad_pedidos >= 5:
+        descuento_base = 0.10
+    elif cantidad_pedidos >= 3:
+        descuento_base = 0.05
+    
+    if envio.urgente:
+        descuento_base = descuento_base * 0.5
+    
+    if envio.zona in ZONAS_ALEJADAS:
+        if cantidad_pedidos >= 20:
+            descuento_base = descuento_base + 0.05
+        else:
+            descuento_base = descuento_base * 0.8
+    
+    if envio.peso_kg > 50.0 and cantidad_pedidos >= 5:
+        descuento_base = descuento_base + 0.03
+    
+    if envio.valor_declarado > 500.0 and cantidad_pedidos >= 7:
+        descuento_base = min(descuento_base + 0.04, 0.25)
+    
+    return round(descuento_base, 2)
